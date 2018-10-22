@@ -1,0 +1,256 @@
+% Don't touch this %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,headheight=3ex,headsep=3ex]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+
+\newcommand{\blankline}{\quad\pagebreak[2]}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Modify Course title, instructor name, semester here %%%%%%%%
+
+\title{880005-M-6: Health Analytics}
+\author{Willem Huijbers}
+\date{Fall, 2018}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Don't touch this %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[sc]{mathpazo}
+\linespread{1.05} % Palatino needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+\usepackage[ddmmyyyy]{datetime}% http://ctan.org/pkg/datetime
+\usepackage{advdate}% http://ctan.org/pkg/advdate
+\newdateformat{syldate}{\twodigit{\THEMONTH}/\twodigit{\THEDAY}}
+\newsavebox{\MONDAY}\savebox{\MONDAY}{Mon}% Mon
+\newcommand{\week}[1]{%
+%  \cleardate{mydate}% Clear date
+% \newdate{mydate}{\the\day}{\the\month}{\the\year}% Store date
+  \paragraph*{\kern-2ex\quad #1, \syldate{\today} - \AdvanceDate[4]\syldate{\today}:}% Set heading  \quad #1
+%  \setbox1=\hbox{\shortdayofweekname{\getdateday{mydate}}{\getdatemonth{mydate}}{\getdateyear{mydate}}}%
+  \ifdim\wd1=\wd\MONDAY
+    \AdvanceDate[7]
+  \else
+    \AdvanceDate[7]
+  \fi%
+}
+\usepackage{setspace}
+\usepackage{multicol}
+%\usepackage{indentfirst}
+\usepackage{fancyhdr,lastpage}
+\usepackage{url}
+\pagestyle{fancy}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{amsmath}
+\usepackage{layout}
+
+\lhead{}
+\chead{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Modify header here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\rhead{\footnotesize Health Analytics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Don't touch this %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lfoot{}
+\cfoot{\small \thepage/\pageref*{LastPage}}
+\rfoot{}
+
+\usepackage{array, xcolor}
+\usepackage{color,hyperref}
+\definecolor{clemsonorange}{HTML}{EA6A20}
+\hypersetup{colorlinks,breaklinks,linkcolor=clemsonorange,urlcolor=clemsonorange,anchorcolor=clemsonorange,citecolor=black}
+
+\begin{document}
+
+\maketitle
+
+\blankline
+
+\begin{tabular*}{.93\textwidth}{@{\extracolsep{\fill}}lr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Modify information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+E-mail: \texttt{w.huijbers@uvt.nl} & Web: \href{https://github.com/huijbers}{\tt\bf https://github.com/huijbers}  \\
+
+Office Hour: Monday 9:00-10:00  \\
+Office: D336  \\
+\hline
+\end{tabular*}
+
+\vspace{5 mm}
+
+% First Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Course Description}
+
+Health analytics is a rapidly growing domain of data science. In this course, we will focus on key concepts in healthy analytics and epidemiology. We will discuss the application of these concepts in research and their impact public health and society. For example, we will explore how data collection is often limited by observational biases. Observational biases typically influence the outcome of an analysis and thus results. Understanding of epidemiological concepts is therefore crucial for the interpretation of results, especially in context of large amounts of health data. The course will put emphasis on theory, ideas, and epidemiological axioms. Theory will be combined with hands-on exercises in exploratory data analysis, data visualization and basic predictive models. During the course, practitioners working in the field of health analytics will be invited to discuss applications in different medical contexts.
+\bigskip
+
+% Second Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Required Materials} 
+
+\begin{itemize}
+\item Book: Bhopal RS. Concepts of Epidemiology. Oxford University Press; 2002  
+\item Scientific articles (weekly announced on Blackboard)
+\end{itemize}  
+
+% Add a figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure*}
+\includegraphics[width=0.15\textwidth,angle=0]{Cover_Bhopal.png}
+\end{figure*}
+
+
+% Third Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Prerequisites}
+Basic understanding of biology is helpful, as is some familiarity with illness and disease, but a medical background in not necessary. The exercises and assignments will consist of simple math, statistics and programming in R. No prior knowledge is required, but without any programming experience, some additional work will be required, in order to keep up.
+
+% Fourth Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Learning Goals}
+\begin{enumerate}
+\item Reproduce basic concepts in Epidemiology
+\item Efficiently read and interpret scientific articles
+\item Apply analysis methods and visualization in R
+\item Master statistics for health analytics
+\item Present on a research project
+\item Discuss current topics in health analytics and epidemiology
+
+
+\end{enumerate}
+
+% Fifth Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Course Structure}
+
+\subsection*{Class Structure}
+
+The course will consist of two meetings each week. The first meeting is focused around the content of the book/articles and combines class discussions with lectures. The second meeting is focused around hands on data science and will provide context for the assignments, practical assistance, Q\&A and student presentations.
+
+\subsection*{Assessments}
+
+The course will be examined through a final exam, three assignments and one presentation. To participate in the final exam, students will answer weekly discussion questions and practical assignments in data analysis and visualization. These will be announced weekly. The discussion questions and data analysis assignment should be uploaded on BlackBoard and are Pass/Fail. The partake in the final exam, the student is allowed to miss two assignments at maximum.
+
+
+
+\subsection*{Grading Policy}
+The final course grade will count the assessments using the following proportions:
+\begin{itemize}
+	\item \underline{\textbf{70\%}} of your grade will be determined by the final exam.
+	\item \underline{\textbf{25\%}} of your grade will be determined by assignments \\
+	assignment 1 (5\%), assignment 2 (5\%) and assignment 3 (15\%)
+	\item \underline{\textbf{5\%}} of your grade will be determined by the presentation
+
+\end{itemize}
+
+
+% Course Schedule %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section*{Schedule}
+
+
+The schedule is tentative and subject to change. 
+
+% Set first date of the semester (for some reason this is a week before what comes up, but that's easy to get around)
+\SetDate[15/10/2018]
+\week{Week 01} Introduction
+\begin{itemize}
+\item Tuesday from 08.45-10.30 in DZ 6 \\
+Lecture: Introduction \\
+Article: Big data meets public health, Khoury and Ioannidis (2014), Science
+\item Thursday from 14.45-16.30 in WZ 205 \\
+Workgroup: Tools for epidemiology 
+\end{itemize}
+
+\week{Week 02} Population and Variance 
+\begin{itemize}
+\item Tuesday from 08.45-10.30 in DZ 6 \\
+Lecture: chapters 1 and 2 \\
+Article: Clinical epidemiology in the era of big data: new
+opportunities, familiar challenges, Ehrenstein et al (2017), Clinical Epidemiology
+\item Thursday from 14.45-16.30 in WZ 205 \\
+Workgroup: Exploratory Data Analysis 
+\end{itemize}
+
+\week{Week 03} Error, bias and confounds
+\begin{itemize}
+\item Tuesday from 08.45-10.30 in DZ 6 \\
+Lecture: chapters 2 + 3 
+\item  Thursday: No Workgroup (Benelearn 2018)
+\item Friday 09/11 at 23:59\\
+Due assignment 1 
+\end{itemize}
+
+\week{Week 04} The epidemiological method
+\begin{itemize}
+\item Tuesday from 08.45-10.30 in DZ 6 \\
+Lecture: chapters 5 and 6  
+\item Thursday No Workgroup (Dies Natalis)
+\end{itemize}
+
+\week{Week 05} Risk, incidence and prevalence
+\begin{itemize}
+\item Tuesday from 08.45-10.30 in DZ 6 \\
+Lecture: chapter 7 \\
+Article: The changing prevalence and incidence of dementia over time: current evidence, Wu et al (2017), Nature Reviews Neurology 
+\item Thursday from 14.45-16.30 in CubeZ 222 \\
+Work group: Descriptive analysis 
+\item Due assignment 2 \\
+Friday 23/11 at 23:59
+\end{itemize}
+
+\week{Week 06} Data interpretation
+\begin{itemize}
+\item Tuesday from 08.45-10.30 in DZ 6 \\
+Lecture: chapter 8 \\
+Article: Simple tools for understanding risks: from innumeracy to insight, Gigerenzer (2003), BMJ
+\item Thursday from 14.45-16.30 in DZ 8 \\
+Work group: Longitudinal data analysis 
+\end{itemize}
+
+\week{Week 07} Study Designs
+\begin{itemize}
+\item Tuesday from 08.45-10.30 in DZ 6 \\
+Lecture: chapter 9 \\
+Article: Detecting influenza epidemics using search engine query data, Ginsberg et al (2009), Nature \\
+Article : Big data. The parable of Google Flu: traps in big data. Lazer et al (2014), Science 
+\item Thursday from 14.45-16.30 WZ 205 \\
+Work group: Presentations 
+\end{itemize}
+
+\week{Week 08} Reflection and Recap
+\begin{itemize}
+\item Tuesday from 08.45-10.30 in DZ 6\\
+Lecture: chapter 10 + article
+\item Thursday from 14.45-16.30\\
+Q\&A for final assignment
+\item Friday 14/12 at 23:59\\
+Due assignment 3 
+\end{itemize}
+
+\week{Week 9} \textbf{transition week}
+\week{Week 10} \textbf{transition week}
+\week{Week 11} \textbf{holidays}
+\week{Week 12} \textbf{Resit Exam}
+
+\end{document}
+
+
+© 2017 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
